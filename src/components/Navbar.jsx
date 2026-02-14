@@ -9,7 +9,7 @@ const navItems = [
   { name: "Contact", href: "#contact" },
 ];
 
-export function Navbar() {
+export function Navbar({ toggleTheme, theme }) {
   const navRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -27,7 +27,7 @@ export function Navbar() {
       y: -100,
       opacity: 0,
       duration: 1,
-      delay: 2.5,
+      delay: 0.5,
       ease: "power3.out",
     });
   }, []);
@@ -64,7 +64,7 @@ export function Navbar() {
         className="fixed top-0 left-0 w-full z-50 transition-all duration-500"
         style={{
           backgroundColor: scrolled
-            ? "rgba(10, 10, 15, 0.85)"
+            ? `rgba(${theme === 'dark' ? '10, 10, 15' : '255, 255, 255'}, 0.85)`
             : "transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
           borderBottom: scrolled
@@ -84,7 +84,7 @@ export function Navbar() {
           </a>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -98,40 +98,78 @@ export function Navbar() {
                 {item.name}
               </a>
             ))}
+
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium uppercase tracking-widest"
+              style={{
+                backgroundColor: "var(--card)",
+                color: "var(--foreground)",
+                border: "1px solid var(--border)",
+              }}
+              data-cursor-hover
+              onMouseEnter={(e) => {
+                e.target.style.borderColor = "var(--accent)";
+                e.target.style.backgroundColor = "var(--accent)";
+                e.target.style.color = "var(--accent-foreground)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.borderColor = "var(--border)";
+                e.target.style.backgroundColor = "var(--card)";
+                e.target.style.color = "var(--foreground)";
+              }}
+            >
+              {theme === "dark" ? "☀️" : "🌙"}
+            </button>
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden relative z-[60] w-8 h-6 flex flex-col justify-between"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            <span
-              className="block w-full h-px transition-all duration-300"
+          {/* Mobile menu and theme */}
+          <div className="md:hidden flex items-center gap-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full transition-all duration-300"
               style={{
-                backgroundColor: "var(--foreground)",
-                transform: isOpen
-                  ? "rotate(45deg) translate(4px, 4px)"
-                  : "none",
+                backgroundColor: "var(--card)",
+                color: "var(--foreground)",
               }}
-            />
-            <span
-              className="block w-full h-px transition-all duration-300"
-              style={{
-                backgroundColor: "var(--foreground)",
-                opacity: isOpen ? 0 : 1,
-              }}
-            />
-            <span
-              className="block w-full h-px transition-all duration-300"
-              style={{
-                backgroundColor: "var(--foreground)",
-                transform: isOpen
-                  ? "rotate(-45deg) translate(5px, -5px)"
-                  : "none",
-              }}
-            />
-          </button>
+            >
+              {theme === "dark" ? "☀️" : "🌙"}
+            </button>
+
+            {/* Mobile hamburger */}
+            <button
+              className="relative z-[60] w-8 h-6 flex flex-col justify-between"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              <span
+                className="block w-full h-px transition-all duration-300"
+                style={{
+                  backgroundColor: "var(--foreground)",
+                  transform: isOpen
+                    ? "rotate(45deg) translate(4px, 4px)"
+                    : "none",
+                }}
+              />
+              <span
+                className="block w-full h-px transition-all duration-300"
+                style={{
+                  backgroundColor: "var(--foreground)",
+                  opacity: isOpen ? 0 : 1,
+                }}
+              />
+              <span
+                className="block w-full h-px transition-all duration-300"
+                style={{
+                  backgroundColor: "var(--foreground)",
+                  transform: isOpen
+                    ? "rotate(-45deg) translate(5px, -5px)"
+                    : "none",
+                }}
+              />
+            </button>
+          </div>
         </div>
       </nav>
 

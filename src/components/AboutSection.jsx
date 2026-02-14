@@ -90,11 +90,11 @@ export function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="py-32 md:py-48 px-6 md:px-12 relative"
+      className="py-24 md:py-40 px-6 md:px-12 relative"
     >
       <div className="max-w-7xl mx-auto">
         {/* Label */}
-        <div className="about-label flex items-center gap-4 mb-16">
+        <div className="about-label flex items-center gap-4 mb-16 md:mb-20">
           <span
             className="font-mono text-xs uppercase tracking-[0.3em]"
             style={{ color: "var(--accent)" }}
@@ -108,8 +108,8 @@ export function AboutSection() {
         </div>
 
         {/* Big about text */}
-        <div className="about-text mb-20">
-          <p className="text-2xl md:text-4xl lg:text-5xl font-medium leading-relaxed tracking-tight flex flex-wrap gap-x-[0.35em] gap-y-[0.15em]">
+        <div className="about-text mb-20 md:mb-28">
+          <p className="text-2xl md:text-4xl lg:text-5xl font-medium leading-relaxed tracking-tight flex flex-wrap gap-x-[0.4em] gap-y-[0.2em]">
             {aboutText.split(" ").map((word, i) => (
               <span key={i} className="about-word inline-block">
                 {word.includes("AI") ||
@@ -127,12 +127,12 @@ export function AboutSection() {
 
         {/* Divider */}
         <div
-          className="about-divider w-full h-px mb-20 origin-left"
+          className="about-divider w-full h-px mb-24 md:mb-32 origin-left"
           style={{ backgroundColor: "var(--border)" }}
         />
 
         {/* Focus areas */}
-        <div className="focus-grid grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="focus-grid grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-14">
           {focuses.map((focus) => (
             <div
               key={focus.num}
@@ -140,19 +140,19 @@ export function AboutSection() {
               data-cursor-hover
             >
               <span
-                className="font-mono text-xs block mb-4"
+                className="font-mono text-xs block mb-6 md:mb-8"
                 style={{ color: "var(--accent)" }}
               >
                 {focus.num}
               </span>
               <h3
-                className="text-xl font-semibold mb-4 transition-colors duration-300"
+                className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 leading-tight transition-colors duration-300"
                 style={{ color: "var(--foreground)" }}
               >
                 {focus.title}
               </h3>
               <p
-                className="text-sm leading-relaxed"
+                className="text-sm md:text-base leading-relaxed md:leading-loose"
                 style={{ color: "var(--muted-foreground)" }}
               >
                 {focus.desc}

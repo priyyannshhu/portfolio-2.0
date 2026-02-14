@@ -30,6 +30,18 @@
   --radius: 0.5rem;
 }
 
+html.light-mode {
+  --background: #ffffff;
+  --foreground: #0f0f1a;
+  --muted: #e8e8f0;
+  --muted-foreground: #6b6b80;
+  --accent: #0066cc;
+  --accent-foreground: #ffffff;
+  --border: #d4d4e0;
+  --card: #f5f5fa;
+  --card-foreground: #0f0f1a;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -97,4 +109,39 @@ body {
   @media (width >= 1024px) { max-width: 1024px; }
   @media (width >= 1280px) { max-width: 1280px; }
   @media (width >= 1400px) { max-width: 1400px; }
+}
+
+/* Gooey light effect on hover */
+.gooey-light {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.gooey-light::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(200, 255, 0, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+  z-index: 10;
+}
+
+.gooey-light:hover::before {
+  opacity: 1;
+}
+
+/* Section spacing */
+section {
+  padding: 6rem 0;
+}
+
+@media (width >= 768px) {
+  section {
+    padding: 8rem 0;
+  }
 }

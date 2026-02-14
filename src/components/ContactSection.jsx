@@ -88,11 +88,11 @@ export function ContactSection() {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-32 md:py-48 px-6 md:px-12 relative"
+      className="py-24 md:py-40 px-6 md:px-12 relative"
     >
       <div className="max-w-7xl mx-auto">
         {/* Label */}
-        <div className="contact-label flex items-center gap-4 mb-16">
+        <div className="contact-label flex items-center gap-4 mb-16 md:mb-20">
           <span
             className="font-mono text-xs uppercase tracking-[0.3em]"
             style={{ color: "var(--accent)" }}
@@ -106,8 +106,8 @@ export function ContactSection() {
         </div>
 
         {/* Big heading */}
-        <div className="contact-heading overflow-hidden mb-20">
-          <h2 className="text-5xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.9]">
+        <div className="contact-heading overflow-hidden mb-20 md:mb-28">
+          <h2 className="text-5xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.95]">
             {title.split("").map((char, i) => (
               <span
                 key={i}
