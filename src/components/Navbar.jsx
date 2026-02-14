@@ -27,7 +27,7 @@ export function Navbar({ toggleTheme, theme }) {
       y: -100,
       opacity: 0,
       duration: 1,
-      delay: 2.5,
+      delay: 0.5,
       ease: "power3.out",
     });
   }, []);
