@@ -86,11 +86,11 @@ export default function ExperienceSection() {
     <section
       id="experience"
       ref={sectionRef}
-      className="py-32 md:py-48 px-6 md:px-12 relative"
+      className="py-24 md:py-40 px-6 md:px-12 relative"
     >
       <div className="max-w-7xl mx-auto">
         {/* Label */}
-        <div className="exp-label flex items-center gap-4 mb-16">
+        <div className="exp-label flex items-center gap-4 mb-16 md:mb-20">
           <span
             className="font-mono text-xs uppercase tracking-[0.3em]"
             style={{ color: "var(--accent)" }}
@@ -104,8 +104,8 @@ export default function ExperienceSection() {
         </div>
 
         {/* Heading */}
-        <div className="exp-heading overflow-hidden mb-20">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight flex flex-wrap gap-x-[0.35em]">
+        <div className="exp-heading overflow-hidden mb-20 md:mb-28">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight flex flex-wrap gap-x-[0.4em] gap-y-[0.2em]">
             {"Work Experience".split(" ").map((word, i) => (
               <span
                 key={i}
@@ -121,15 +121,15 @@ export default function ExperienceSection() {
         </div>
 
         {/* Experience card */}
-        <div className="exp-card grid grid-cols-1 lg:grid-cols-12 gap-px" style={{ backgroundColor: "var(--border)" }}>
+        <div className="exp-card grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mb-6 md:mb-8">
           {/* Left: role info */}
           <div
-            className="lg:col-span-5 p-8 md:p-12"
-            style={{ backgroundColor: "var(--background)" }}
+            className="lg:col-span-5 p-8 md:p-10 lg:p-12 rounded-lg"
+            style={{ backgroundColor: "var(--card)", border: "1px solid var(--border)" }}
           >
-            <div className="flex items-center gap-3 mb-2">
+            <div className="flex items-center gap-3 mb-4">
               <span
-                className="px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider"
+                className="px-3 py-1 text-xs font-mono uppercase tracking-wider rounded"
                 style={{
                   backgroundColor: "var(--accent)",
                   color: "var(--accent-foreground)",
@@ -139,20 +139,20 @@ export default function ExperienceSection() {
               </span>
             </div>
             <h3
-              className="text-2xl md:text-3xl font-bold mb-3"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 leading-tight"
               style={{ color: "var(--foreground)" }}
             >
               Software Development Intern
             </h3>
             <p
-              className="text-lg font-medium mb-6"
+              className="text-lg md:text-xl font-medium mb-8 md:mb-10"
               style={{ color: "var(--accent)" }}
             >
               String AI India
             </p>
 
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3">
+            <div className="flex flex-col gap-4 md:gap-5">
+              <div className="flex items-center gap-4">
                 <span
                   className="font-mono text-xs"
                   style={{ color: "var(--muted-foreground)" }}
@@ -160,13 +160,13 @@ export default function ExperienceSection() {
                   Duration
                 </span>
                 <span
-                  className="text-sm"
+                  className="text-sm md:text-base"
                   style={{ color: "var(--foreground)" }}
                 >
                   Jan 2026 - Present
                 </span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <span
                   className="font-mono text-xs"
                   style={{ color: "var(--muted-foreground)" }}
@@ -174,13 +174,13 @@ export default function ExperienceSection() {
                   Location
                 </span>
                 <span
-                  className="text-sm"
+                  className="text-sm md:text-base"
                   style={{ color: "var(--foreground)" }}
                 >
                   Remote
                 </span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <span
                   className="font-mono text-xs"
                   style={{ color: "var(--muted-foreground)" }}
@@ -188,7 +188,7 @@ export default function ExperienceSection() {
                   Type
                 </span>
                 <span
-                  className="text-sm"
+                  className="text-sm md:text-base"
                   style={{ color: "var(--foreground)" }}
                 >
                   Paid Internship
@@ -197,14 +197,15 @@ export default function ExperienceSection() {
             </div>
 
             {/* Technologies */}
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-8 md:mt-10 flex flex-wrap gap-3">
               {technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 text-xs font-mono"
+                  className="px-3 py-1.5 text-xs font-mono rounded"
                   style={{
-                    border: "1px solid var(--border)",
-                    color: "var(--muted-foreground)",
+                    border: "1px solid var(--accent)",
+                    color: "var(--accent)",
+                    backgroundColor: "rgba(200, 255, 0, 0.05)",
                   }}
                 >
                   {tech}
@@ -215,26 +216,26 @@ export default function ExperienceSection() {
 
           {/* Right: responsibilities */}
           <div
-            className="exp-details lg:col-span-7 p-8 md:p-12"
-            style={{ backgroundColor: "var(--card)" }}
+            className="exp-details lg:col-span-7 p-8 md:p-10 lg:p-12 rounded-lg"
+            style={{ backgroundColor: "var(--muted)", border: "1px solid var(--border)" }}
           >
             <h4
-              className="font-mono text-xs uppercase tracking-[0.2em] mb-8"
+              className="font-mono text-xs uppercase tracking-[0.2em] mb-10 md:mb-12"
               style={{ color: "var(--accent)" }}
             >
               Key Responsibilities
             </h4>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 md:gap-8">
               {responsibilities.map((resp, i) => (
                 <div key={i} className="exp-detail flex items-start gap-4">
                   <span
-                    className="font-mono text-xs mt-1"
+                    className="font-mono text-xs mt-1 font-bold"
                     style={{ color: "var(--accent)" }}
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <p
-                    className="text-base leading-relaxed"
+                    className="text-base md:text-lg leading-relaxed md:leading-loose"
                     style={{ color: "var(--muted-foreground)" }}
                   >
                     {resp}
@@ -244,7 +245,7 @@ export default function ExperienceSection() {
             </div>
 
             <p
-              className="mt-10 text-sm leading-relaxed"
+              className="mt-10 md:mt-12 text-sm md:text-base leading-relaxed md:leading-loose"
               style={{ color: "var(--muted-foreground)" }}
             >
               Selected for a paid internship position focusing on full-stack
@@ -255,7 +256,7 @@ export default function ExperienceSection() {
         </div>
 
         {/* Stats */}
-        <div className="exp-stats grid grid-cols-2 md:grid-cols-4 gap-px mt-px" style={{ backgroundColor: "var(--border)" }}>
+        <div className="exp-stats grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-6 md:mt-8">
           {[
             { value: "2026", label: "Started" },
             { value: "Remote", label: "Work Mode" },
@@ -264,12 +265,12 @@ export default function ExperienceSection() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="exp-stat p-6 text-center"
-              style={{ backgroundColor: "var(--background)" }}
+              className="exp-stat p-6 md:p-8 text-center rounded-lg"
+              style={{ backgroundColor: "var(--card)", border: "1px solid var(--border)" }}
             >
               <div
-                className="text-lg md:text-xl font-bold mb-1"
-                style={{ color: "var(--foreground)" }}
+                className="text-2xl md:text-3xl font-bold mb-2"
+                style={{ color: "var(--accent)" }}
               >
                 {stat.value}
               </div>

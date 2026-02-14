@@ -119,13 +119,13 @@ export function SkillsSection() {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-32 md:py-48 px-6 md:px-12 relative"
+      className="py-24 md:py-40 px-6 md:px-12 relative"
     >
 
 
       <div className="max-w-7xl mx-auto relative z-[2]">
         {/* Label */}
-        <div className="skills-label flex items-center gap-4 mb-16">
+        <div className="skills-label flex items-center gap-4 mb-16 md:mb-20">
           <span
             className="font-mono text-xs uppercase tracking-[0.3em]"
             style={{ color: "var(--accent)" }}
@@ -139,8 +139,8 @@ export function SkillsSection() {
         </div>
 
         {/* Heading */}
-        <div className="skills-heading overflow-hidden mb-20">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight flex flex-wrap gap-x-[0.35em]">
+        <div className="skills-heading overflow-hidden mb-20 md:mb-28">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight flex flex-wrap gap-x-[0.4em] gap-y-[0.2em]">
             {"Technical Expertise".split(" ").map((word, i) => (
               <span
                 key={i}
@@ -156,22 +156,20 @@ export function SkillsSection() {
         </div>
 
         {/* Skills grid */}
-        <div className="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "var(--border)" }}>
+        <div className="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
-              className="skill-category p-6 md:p-8 transition-all duration-500 group cursor-default"
-              style={{
-                backgroundColor:
-                  activeCategory === index
-                    ? "var(--muted)"
-                    : "var(--background)",
+              className="skill-category p-6 md:p-8 lg:p-10 transition-all duration-500 group cursor-default rounded-lg"
+              style={{ 
+                backgroundColor: activeCategory === index ? "var(--muted)" : "var(--card)",
+                borderColor: activeCategory === index ? "var(--accent)" : "var(--border)"
               }}
               onMouseEnter={() => setActiveCategory(index)}
               onMouseLeave={() => setActiveCategory(null)}
               data-cursor-hover
             >
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-6 md:mb-8">
                 <span
                   className="font-mono text-xs"
                   style={{ color: "var(--accent)" }}
@@ -187,13 +185,13 @@ export function SkillsSection() {
               </div>
 
               <h3
-                className="text-lg font-semibold mb-6 transition-colors duration-300 group-hover:text-[var(--accent)]"
+                className="text-lg md:text-xl font-semibold mb-6 md:mb-8 transition-colors duration-300 group-hover:text-[var(--accent)]"
                 style={{ color: "var(--foreground)" }}
               >
                 {category.title}
               </h3>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-3 md:gap-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={skill}
@@ -233,7 +231,7 @@ export function SkillsSection() {
         </div>
 
         {/* Stats */}
-        <div className="skills-stats grid grid-cols-2 md:grid-cols-4 gap-px mt-px" style={{ backgroundColor: "var(--border)" }}>
+        <div className="skills-stats grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
             { number: "32+", label: "Total Skills" },
             { number: "8", label: "Specializations" },
@@ -242,11 +240,11 @@ export function SkillsSection() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="skills-count p-6 md:p-8 text-center"
-              style={{ backgroundColor: "var(--background)" }}
+              className="skills-count p-6 md:p-8 text-center rounded-lg"
+              style={{ backgroundColor: "var(--card)", border: "1px solid var(--border)" }}
             >
               <div
-                className="text-2xl md:text-3xl font-bold mb-1"
+                className="text-3xl md:text-4xl font-bold mb-2 md:mb-3"
                 style={{ color: "var(--accent)" }}
               >
                 {stat.number}

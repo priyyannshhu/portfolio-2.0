@@ -134,11 +134,11 @@ export function ProjectSection() {
     <section
       id="projects"
       ref={sectionRef}
-      className="py-32 md:py-48 px-6 md:px-12 relative"
+      className="py-24 md:py-40 px-6 md:px-12 relative"
     >
       <div className="max-w-7xl mx-auto">
         {/* Label */}
-        <div className="projects-label flex items-center gap-4 mb-16">
+        <div className="projects-label flex items-center gap-4 mb-16 md:mb-20">
           <span
             className="font-mono text-xs uppercase tracking-[0.3em]"
             style={{ color: "var(--accent)" }}
@@ -152,8 +152,8 @@ export function ProjectSection() {
         </div>
 
         {/* Heading */}
-        <div className="projects-heading overflow-hidden mb-20">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight flex flex-wrap gap-x-[0.35em]">
+        <div className="projects-heading overflow-hidden mb-20 md:mb-28">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight flex flex-wrap gap-x-[0.4em] gap-y-[0.2em]">
             {"Featured Work".split(" ").map((word, i) => (
               <span
                 key={i}
@@ -178,7 +178,7 @@ export function ProjectSection() {
               <div key={project.id} className="project-row">
                 {/* Main row */}
                 <div
-                  className="group cursor-pointer py-8 transition-all duration-500"
+                  className="group cursor-pointer py-10 md:py-12 transition-all duration-500"
                   style={{
                     borderTop: "1px solid var(--border)",
                   }}
