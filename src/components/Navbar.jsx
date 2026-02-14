@@ -64,7 +64,7 @@ export function Navbar({ toggleTheme, theme }) {
         className="fixed top-0 left-0 w-full z-50 transition-all duration-500"
         style={{
           backgroundColor: scrolled
-            ? "rgba(10, 10, 15, 0.85)"
+            ? `rgba(${theme === 'dark' ? '10, 10, 15' : '255, 255, 255'}, 0.85)`
             : "transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
           borderBottom: scrolled

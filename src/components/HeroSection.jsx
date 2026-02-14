@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import personImage from "../assests/person.png";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -298,7 +299,7 @@ export function HeroSection() {
               }}
             >
               <img
-                src="/src/assests/person.png"
+                src={personImage}
                 alt="Ankita Singh"
                 className="w-full h-full object-cover"
                 onMouseEnter={(e) => {
