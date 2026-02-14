@@ -277,6 +277,7 @@ export function HeroSection() {
             </a>
             </div>
           </div>
+        </div>
 
           {/* Right side - Image with gooey light effect */}
           <div className="flex-1 flex justify-center items-center mt-12 lg:mt-0">
